@@ -9,7 +9,9 @@
             Spacing="25">
 
             <Label x:Name="lblInformacoes" Text="" />
-            <Button x:Name="btnAtualizarInformacoes" Text="Atualizar" Clicked="btnAtualizarInformacoes_Clicked"  />
+            <Button x:Name="btnAtualizarInformacoes" Text="Atualizar Informações" Clicked="btnAtualizarInformacoes_Clicked"  />
+            
+            
 
             <Image
                 Source="dotnet_bot.png"

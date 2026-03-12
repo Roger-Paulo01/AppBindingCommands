@@ -35,12 +35,5 @@ namespace AppBindingCommands.ViewModels
 
         public string DisplayName => $"Nome digitado:{Name}";
 
-
-
-
-
-
-
-
     }
 }
