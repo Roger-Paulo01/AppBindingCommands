@@ -7,6 +7,8 @@
         
         <Entry Text="{Binding Name}" Placeholder="Digite seu nome" />         
         <Label Text="{Binding DisplayName}" />
-        
+
+        <Button Command="{Binding Optioncommand}" Text="Exibir Opções" />
+
     </VerticalStackLayout>
 </ContentPage>

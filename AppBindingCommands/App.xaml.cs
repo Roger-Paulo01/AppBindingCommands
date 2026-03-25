@@ -10,26 +10,24 @@ namespace AppBindingCommands
 
             DateTime data = DateTime.Now;
             Preferences.Set("dtAtual", data);
-            Preferences.Set("AcaoInicial", string.Format ("* App executado às {0}. \n", data));
-
-            MainPage = new Shell();
+            Preferences.Set("AcaoInicial", $"* App executado às {data}");
         }
 
         protected override void OnStart()
         {
             base.OnStart();
-            Preferences.Set("AcaoStart", string.Format("* App iniciado às {0}. \n", DateTime.Now));
+            Preferences.Set("AcaoStart", $" App iniciado às {DateTime.Now}");
         }
 
         protected override void OnSleep()
         {
             base.OnSleep();
-            Preferences.Set("AcaoSleep", string.Format("* App segundo plano às {0}. \n", DateTime.Now));
+            Preferences.Set("AcaoSleep", $" App segundo plano às {DateTime.Now}");
         }
         protected override void OnResume()
         {
             base.OnResume();
-            Preferences.Set("AcaoResume", string.Format("* App reativado às {0}. \n", DateTime.Now));
+            Preferences.Set("AcaoResume", $" App reativado às {DateTime.Now}");
         }
         
 

@@ -35,5 +35,15 @@ namespace AppBindingCommands.ViewModels
 
         public string DisplayName => $"Nome digitado:{Name}";
 
+        string displayMessage = string.Empty;
+        public string DisplayMessage 
+        { 
+            get => displayMessage;
+            set 
+            { 
+                displayMessage = value; 
+            }
+        }
+
     }
 }

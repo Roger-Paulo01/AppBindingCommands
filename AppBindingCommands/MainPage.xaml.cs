@@ -1,4 +1,6 @@
-﻿namespace AppBindingCommands
+﻿using AppBindingCommands.Views;
+
+namespace AppBindingCommands
 {
     public partial class MainPage : ContentPage
     {
@@ -39,5 +41,38 @@
 
             lblInformacoes.Text = informacoes;
         }
+
+
+        //aqui vai o da aula passada/Completar Zzzzz
+
+
+        public async Task ShowOptions()
+        {
+            string resul = await Application.Current.MainPage
+                .DisplayActionSheet("Selecione uma opção: ", "",
+                "Cancelar", "Limpar", "Contar Caracteres", "Exibir Saudação");
+
+            if (resul != null)
+            {
+                if (resul.Equals("Limpar"))
+                    await CleanConfirmation();
+                if (resul.Equals("ContarCaracteres"))
+                    await CountCharacters();
+                if (resul.Equals("Exibir Saudação"))
+                    await ShowMessage();
+            }
+        }
+
+        public ICommand OptionCommand { get; }
+
+        public UsuarioView()
+        {
+            ShowMessageCommand = new Command(ShowMessage);
+            CountCommand = new Command(async () => await CountCharacters());
+            CleanCommand = new Command(async () => await CleanConfirmation());
+            OptionCommand = new Command(async () => await ShowOptions());
+        }
+
+
     }
 }
